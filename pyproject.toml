@@ -24,7 +24,14 @@ asyncpg = {version = "^0.29.0", extras = ["sa"]}
 httptools = "^0.6.1"
 pymongo = "^4.8.0"
 loguru = "^0"
-
+langchain = "^0.3.13"
+langchain_community = "^0.3.13"
+langchain_core = "^0.3.28"
+langchain_google_genai = "^2.0.7"
+python-docx = "^1.1.2"
+python-pptx = "^1.0.2"
+pypdf = "^5.1.0"
+yt-dlp="*"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8"

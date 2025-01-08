@@ -1,6 +1,8 @@
 FROM python:3.11.4-slim-bullseye as prod
 RUN apt-get update && apt-get install -y \
   gcc \
+  ffmpeg \
+  libsndfile1 \
   && rm -rf /var/lib/apt/lists/*
 
 

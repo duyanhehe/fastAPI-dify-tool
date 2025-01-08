@@ -53,6 +53,7 @@ class Settings(BaseSettings):
 
     # Path to the directory with media
     media_dir: str = "media"
+    gemini_key: str = ""
 
     @property
     def db_url(self) -> URL:
