@@ -14,11 +14,12 @@ llm = ChatGoogleGenerativeAI(
 )
 
 # Define prompt templates
+# Define prompt templates
 prompt = PromptTemplate(
     input_variables=["name", "relationship", "skills", "achievements", "purpose"],
     template=(
         """
-        Write a professional letter of recommendation based on the following details:
+        Write a professional letter of recommendation in the format of a CV with the following details:
 
         Name of the person being recommended: {name}
         Your relationship to them: {relationship}
@@ -26,7 +27,35 @@ prompt = PromptTemplate(
         Achievements or examples: {achievements}
         Purpose of the recommendation: {purpose}
 
-        Make it formal, personalized, and compelling.
+        Format it with the following structure:
+
+        --------------------------------------------------------------
+        [Name of the Person Being Recommended]
+        [Purpose of Recommendation, e.g., "Candidate for MBA Program"]
+        --------------------------------------------------------------
+
+        PROFESSIONAL RELATIONSHIP
+        [Describe your relationship with them, e.g., "I supervised them during their tenure as a software engineer at BrightTech Solutions."]
+
+        SKILLS
+        - [List skills, e.g., "Leadership and communication"]
+        - [Skill]
+        - [Skill]
+
+        ACHIEVEMENTS
+        - [Example 1, e.g., "Led a team that delivered a critical software project ahead of schedule."]
+        - [Example 2]
+        - [Example 3]
+
+        PURPOSE OF RECOMMENDATION
+        [Explain why you recommend this individual for their specific purpose, e.g., "Emily Johnson is an exceptional candidate for the MBA program."]
+
+        CONTACT INFORMATION
+        [Recommender's Name]
+        [Title]
+        [Organization]
+        [Email | Phone Number]
+        --------------------------------------------------------------
         """
     ),
 )
